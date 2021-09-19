@@ -1,0 +1,19 @@
+
+
+
+
+
+<div class="card">
+  <div class="card-header">
+    Lead
+  </div>
+  <div class="card-body">
+    <h1 class="card-title"><%= @lead.first_name %> <%= @lead.last_name %> </h1>
+    <p><%= @lead.comments %> </p>
+    <pre class="card-text"><%= @lead.email %>           <%= @lead.phone %>            <%= @lead.salary %>$</pre>
+
+
+    <%= link_to 'Edit', edit_lead_path(@lead),class:"btn btn-secondary"%> 
+<%= link_to 'Back', leads_path,class:"btn btn-secondary" %>
+  </div>
+</div>

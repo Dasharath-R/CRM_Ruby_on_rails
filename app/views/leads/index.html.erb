@@ -1,0 +1,47 @@
+
+
+
+
+<table class = "table table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Salary</th>
+      <th>Comments</th>
+      <!-- <th>User ID</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody >
+
+
+    <% @leads.each do |lead| %>
+
+    <% if lead.user == current_user %>
+      <tr>
+        <td><%= lead.first_name %></td>
+        <td><%= lead.last_name %></td>
+        <td><%= lead.email %></td>
+        <td><%= lead.phone %></td>
+        <td><%= lead.salary %></td>
+        <td><%= lead.comments %></td>
+        
+       <!--  <td><%= lead.user_id %></td> -->
+
+        <td ><%= link_to 'Show', lead ,style:"text-decoration:none;"%></td>
+        <td><%= link_to 'Edit', edit_lead_path(lead),style:"text-decoration:none;" %></td>
+        <td><%= link_to 'Destroy', lead,style:"text-decoration:none;", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'New Lead', new_lead_path,style:"text-decoration:none;",class:"btn btn-secondary" %>
