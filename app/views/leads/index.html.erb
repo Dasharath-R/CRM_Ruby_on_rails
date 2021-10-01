@@ -6,7 +6,7 @@
   <thead class="table-dark">
 
 
-
+<%  if user_signed_in? %>
 
  <br>
  <br>
@@ -15,8 +15,7 @@
     <tr>
 
 
-      <th>First name</th>
-      <th>Last name</th>
+      <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
       <th>Salary</th>
@@ -33,8 +32,13 @@
 
     <% if lead.user == current_user %>
       <tr>
-        <td><%= lead.first_name %></td>
-        <td><%= lead.last_name %></td>
+        <td>
+          
+               <%= link_to lead.first_name, lead ,style:"text-decoration:none;"%>
+               <%= link_to lead.last_name, lead ,style:"text-decoration:none;"%>
+
+
+             </td>
         <td><%= lead.email %></td>
         <td><%= lead.phone %></td>
         <td><%= lead.salary %></td>
@@ -42,7 +46,6 @@
         
        <!--  <td><%= lead.user_id %></td> -->
 
-        <td ><%= link_to 'Show', lead ,style:"text-decoration:none;"%></td>
         <td><%= link_to 'Edit', edit_lead_path(lead),style:"text-decoration:none;" %></td>
         <td><%= link_to 'Destroy', lead,style:"text-decoration:none;", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -54,3 +57,12 @@
 <br>
 
 <%= link_to 'New Lead', new_lead_path,style:"text-decoration:none;",class:"btn btn-secondary" %>
+
+
+<% else %>
+
+
+
+<p>Home....</p>
+
+<% end %>
