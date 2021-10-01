@@ -46,8 +46,11 @@
         
        <!--  <td><%= lead.user_id %></td> -->
 
-        <td><%= link_to 'Edit', edit_lead_path(lead),style:"text-decoration:none;" %></td>
-        <td><%= link_to 'Destroy', lead,style:"text-decoration:none;", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button type="button" class="btn btn-outline-primary btn-sm"><%= link_to 'Edit', edit_lead_path(lead),style:"text-decoration:none;" %></button></td>
+
+                <td><button type="button" class="btn btn-outline-danger btn-sm"><%= link_to 'Delete', edit_lead_path(lead),style:"text-decoration:none;" %></button></td>
+
+
       </tr>
       <% end %>
     <% end %>

@@ -9,8 +9,8 @@
   </div>
   <div class="card-body">
     <h1 class="card-title"><%= @lead.first_name %> <%= @lead.last_name %> </h1>
-    <p><%= @lead.comments %> </p>
-    <pre class="card-text"><%= @lead.email %>           <%= @lead.phone %>            <%= @lead.salary %>$</pre>
+    <p> Comments:  <%= @lead.comments %> </p>
+    <pre class="card-text"> Email ID: <%= @lead.email %>          Phone Number: <%= @lead.phone %>            Salary: <%= @lead.salary %>$</pre>
 
 
     <%= link_to 'Edit', edit_lead_path(@lead),class:"btn btn-secondary"%> 
